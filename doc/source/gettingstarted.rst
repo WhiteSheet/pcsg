@@ -39,7 +39,7 @@ After installing *pcsg*, you should be able to run one of the :ref:`Examples<Exa
 .. code-block:: bash
 
     # Download *gear.py* example file.
-    wget https://raw.githubusercontent.com/WhiteSheet/pcsg/doc/source/examples/tools/gear.py
+    wget https://raw.githubusercontent.com/WhiteSheet/pcsg/main/doc/source/examples/tools/gear.py
 
     # Render a single frame of the gear example
     python3 gear.py render --fmt png gears
