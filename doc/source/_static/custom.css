@@ -1,0 +1,86 @@
+/**
+ * Container for examples.
+ */
+.exampleimg_container {
+    padding-bottom: 15px;
+}
+
+/**
+ * Container for children (inside: exampleimg_container).
+ */
+.exampleimg_children_thumbs {
+    font-size: small;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/**
+ * Container for a thumbnail entry (inside: exampleimg_children_thumbs)
+ */
+.exampleimg_child_thumb {
+    margin: 5px;
+    border: 1px lightgray solid;
+}
+
+.exampleimg_thumbcount_1 {
+    width: 31%;
+}
+
+.exampleimg_thumbcount_2 {
+    width: 64%;
+}
+
+.exampleimg_thumbcount_3 {
+    width: 100%;
+}
+
+/**
+ * Image container for thumbnail (inside: exampleimg_child_thumb)
+ */
+ .exampleimg_thumb_images {
+    margin: 0px;
+    display: flex;
+    cursor: pointer;
+}
+
+/**
+ * Image container for thumbnail (inside: exampleimg_thumb_images)
+ */
+ .exampleimg_thumb_image {
+    margin: 5px;
+    cursor: pointer;
+}
+
+/**
+ * Description text for thumbnail (inside: exampleimg_child_thumb)
+ */
+.exampleimg_childdescription {
+    margin: 5px;
+    text-align: center;
+}
+
+/**
+ * Frame containing details for each example (inside: exampleimg_container)
+ */
+.exampleimg_details {
+
+}
+
+.exampleimg_detail {
+    display: none;
+}
+
+.exampleimg_detail_caption {
+    font-weight: bold;
+}
+
+.exampleimg_detail_images {
+    cursor: pointer;
+}
+
+.exampleimg_detail_image {
+    cursor: pointer;
+}
+
+.exampleimg_detail_code {
+}

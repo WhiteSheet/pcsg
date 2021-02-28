@@ -8,7 +8,28 @@
             "name": "Python: Run playground.py",
             "type": "python",
             "request": "launch",
-            "program": "examples/playground.py",
+            "program": "playground.py",
+            "args": [
+                "manufacture",
+                "testman",
+                "-S", "bob*,bl*"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Run playground animation",
+            "type": "python",
+            "request": "launch",
+            "program": "playground.py",
+            "args": [
+                "animation",
+                "testinger",
+                "-m", "openscad",
+                "-a", "4",
+                "-d", "1",
+                "-j", "8",
+                "-e", "mp4-h264.insane"
+            ],
             "console": "integratedTerminal"
         }
     ]

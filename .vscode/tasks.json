@@ -12,7 +12,7 @@
                     "PATH": "${workspaceFolder}/.venv/bin:${env:PATH}"
                 }
             },
-            "command": "make html",
+            "command": "make html -j1",
             "problemMatcher": [],
             "group": {
                 "kind": "build",

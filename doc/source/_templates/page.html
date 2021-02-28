@@ -1,0 +1,67 @@
+{% extends "!page.html" %}
+
+{% block footer %}
+{{ super() }}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+
+        // get context of current example img object
+        function getExampleImgCurrentContext (item) {
+            var classList = item.attr ('class').split (/\s+/)
+            for (var i = 0; i < classList.length; i++) {
+                if (classList[i].startsWith ("exampleimg_cid_")) {
+                    cids = classList[i].substring (15).split('_')
+                    lcoid = null
+                    lciid = null
+                    if (cids.length >= 1) {
+                        lcoid = parseInt (cids[0])
+                    }
+                    if (cids.length >= 2) {
+                        lciid = parseInt (cids[1])
+                    }
+                    rc = {
+                        'container': lcoid,
+                        'child': lciid
+                    }
+                    return rc
+                }
+            }
+            return null
+        }
+
+        // click on a thumbnail image
+        function onExampleImgThumbnailClick() {
+            eximg_ids = getExampleImgCurrentContext ($(this))
+            if ((eximg_ids.container != null) && (eximg_ids.child != null)) {
+                // hide thumbnails
+                $(".exampleimg_children_thumbs_" + eximg_ids.container).hide ()
+
+                // show detail
+                $(".exampleimg_detail_" + eximg_ids.container + "_" + eximg_ids.child).show ()
+            }
+        }
+        $(".exampleimg_thumb_image").click(onExampleImgThumbnailClick)
+        $(".exampleimg_thumb_images").click(onExampleImgThumbnailClick)
+
+        // click on a detail image
+        function onExampleImgDetailClick() {
+            eximg_ids = getExampleImgCurrentContext ($(this))
+            if ((eximg_ids.container != null) && (eximg_ids.child != null)) {
+                // hide detail
+                $(".exampleimg_detail_" + eximg_ids.container + "_" + eximg_ids.child).hide ()
+
+                // show thumbnails
+                $(".exampleimg_children_thumbs_" + eximg_ids.container).show ()
+            }
+        }
+        $(".exampleimg_detail_images").click(onExampleImgDetailClick)
+        $(".exampleimg_detail_image").click(onExampleImgDetailClick)
+    });
+</script>
+{% endblock %}
